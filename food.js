@@ -1,4 +1,6 @@
 function Food(name, replenishmentValue) {
   this.name = name;
-  this.replenishmentValue;
+  this.replenishmentValue = replenishmentValue;
 }
+
+module.exports = Food;
