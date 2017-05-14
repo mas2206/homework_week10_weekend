@@ -21,6 +21,6 @@ describe("Food", function() {
 
   it("should have a boolean 'poisoned' value", function() {
     assert.equal(false, food1.poisoned);
-  })
+  });
 
 });
