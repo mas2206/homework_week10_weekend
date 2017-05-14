@@ -13,10 +13,15 @@ Hero.prototype = {
   },
 
   eatFood: function(food) {
-    if (food.name === this.favouriteFood) {
+    if (food.poisoned === true) {
+      return this.health -= 50;
+    }
+    else if (food.name === this.favouriteFood) {
       return this.health += (food.replenishmentValue * 1.5);
     }
+    else {
     return this.health += food.replenishmentValue;
+    }
   },
 
   addTask: function(task) {

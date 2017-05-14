@@ -2,6 +2,7 @@ var assert = require("assert");
 var Hero = require("../hero.js");
 var Food = require("../food.js");
 var Task = require("../task.js");
+var Rat = require("../rat.js");
 
 describe("Hero", function() {
 
@@ -11,6 +12,7 @@ describe("Hero", function() {
   var task1;
   var task2;
   var task3;
+  var rat1;
 
   beforeEach(function() {
     hero1 = new Hero("Gardven", 100, "lamb");
@@ -19,6 +21,7 @@ describe("Hero", function() {
     task1 = new Task("Clear out the bandit camp", 4, 5, 200, false);
     task2 = new Task("Slay the dragon", 9, 2, 1000000, false);
     task3 = new Task("Clean the bathroom", 1, 10, 0, false);
+    rat1 = new Rat();
   });
 
   it("should have a name", function() {
@@ -95,6 +98,12 @@ describe("Hero", function() {
     hero1.addTask(task1);
     hero1.completeTask(task1);
     assert.equal(1, hero1.viewCompletedTasks().length);
-  })
+  });
+
+  it("should lose health if poisoned food is eaten", function() {
+    rat1.poisonFood(food1);
+    hero1.eatFood(food1);
+    assert.equal(50, hero1.health);
+  });
 
 });
