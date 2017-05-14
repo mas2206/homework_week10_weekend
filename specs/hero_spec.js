@@ -1,16 +1,24 @@
 var assert = require("assert");
 var Hero = require("../hero.js");
 var Food = require("../food.js");
+var Task = require("../task.js");
 
 describe("Hero", function() {
 
   var hero1;
   var food1;
+  var food2;
+  var task1;
+  var task2;
+  var task3;
 
   beforeEach(function() {
     hero1 = new Hero("Gardven", 100, "lamb");
     food1 = new Food("chicken", 20);
     food2 = new Food("lamb", 30);
+    task1 = new Task("Clean the bathroom", "low", "high", 1, false);
+    task2 = new Task("Clear out the bandit camp", "medium", "medium", 100, false);
+    task3 = new Task("Slay the dragon", "high", "low", 5000000, false);
   });
 
   it("should have a name", function() {
@@ -37,6 +45,15 @@ describe("Hero", function() {
   it("eating favourite food should give a 1.5x bonus to replenishment value", function() {
     hero1.eatFood(food2);
     assert.equal(145, hero1.health);
-  }); 
+  });
+
+  it("task list starts empty", function() {
+    assert.equal(0, hero1.tasks.length);
+  });
+
+  it("can add task(s) to task list", function() {
+    hero1.addTask(task1);
+    assert.equal(1, hero1.tasks.length);
+  })
 
 });

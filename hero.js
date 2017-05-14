@@ -17,6 +17,10 @@ Hero.prototype = {
       return this.health += (food.replenishmentValue * 1.5);
     }
     return this.health += food.replenishmentValue;
+  },
+
+  addTask: function(task) {
+    this.tasks.push(task);
   }
 
 }
