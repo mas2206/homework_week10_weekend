@@ -16,8 +16,8 @@ describe("Hero", function() {
     hero1 = new Hero("Gardven", 100, "lamb");
     food1 = new Food("chicken", 20);
     food2 = new Food("lamb", 30);
-    task1 = new Task("Slay the dragon", 10, 2, 1000000, false);
-    task2 = new Task("Clear out the bandit camp", 4, 5, 200, false);
+    task1 = new Task("Clear out the bandit camp", 4, 5, 200, false);
+    task2 = new Task("Slay the dragon", 10, 2, 1000000, false);
     task3 = new Task("Clean the bathroom", 1, 9, 0, false);
   });
 
@@ -60,7 +60,14 @@ describe("Hero", function() {
     hero1.addTask(task1);
     hero1.addTask(task2);
     hero1.addTask(task3);
-    assert.deepEqual([task3, task2, task1], hero1.sortTasksByDifficulty());
+    assert.deepEqual([task3, task1, task2], hero1.sortTasksByDifficulty());
+  });
+
+  it("can sort tasks by urgency level (most urgent to least urgent)", function() {
+    hero1.addTask(task1);
+    hero1.addTask(task2);
+    hero1.addTask(task3);
+    assert.deepEqual([task3, task1, task2], hero1.sortTasksByUrgency());
   });
 
 });
