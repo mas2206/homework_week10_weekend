@@ -8,8 +8,9 @@ describe("Hero", function() {
   var food1;
 
   beforeEach(function() {
-    hero1 = new Hero("Gardven", 100, "chicken");
+    hero1 = new Hero("Gardven", 100, "lamb");
     food1 = new Food("chicken", 20);
+    food2 = new Food("lamb", 30);
   });
 
   it("should have a name", function() {
@@ -21,7 +22,7 @@ describe("Hero", function() {
   });
 
   it("should have a favourite food", function() {
-    assert.equal("chicken", hero1.favouriteFood);
+    assert.equal("lamb", hero1.favouriteFood);
   });
 
   it("can talk", function() {
@@ -32,5 +33,10 @@ describe("Hero", function() {
     hero1.eatFood(food1);
     assert.equal(120, hero1.health);
   });
+
+  it("eating favourite food should give a 1.5x bonus to replenishment value", function() {
+    hero1.eatFood(food2);
+    assert.equal(145, hero1.health);
+  }); 
 
 });

@@ -10,7 +10,7 @@ describe("Task", function() {
   beforeEach(function() {
     task1 = new Task("Clean the bathroom", "low", "high", 1, false);
     task2 = new Task("Clear out the bandit camp", "medium", "medium", 100, false);
-    task3 = new Task("Slay the dragon", "high", "low", 5000, false);
+    task3 = new Task("Slay the dragon", "high", "low", 5000000, false);
   });
 
   it("should have a description", function() {

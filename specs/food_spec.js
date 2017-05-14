@@ -8,7 +8,7 @@ describe("Food", function() {
 
   beforeEach(function() {
     food1 = new Food("chicken", 20);
-    food2 = new Food("lamb", 25);
+    food2 = new Food("lamb", 30);
   });
 
   it("should have a name", function() {
@@ -16,7 +16,7 @@ describe("Food", function() {
   });
 
   it("should have a replenishment value", function() {
-    assert.equal(25, food2.replenishmentValue);
+    assert.equal(30, food2.replenishmentValue);
   });
 
 });

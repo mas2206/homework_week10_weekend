@@ -13,6 +13,9 @@ Hero.prototype = {
   },
 
   eatFood: function(food) {
+    if (food.name === this.favouriteFood) {
+      return this.health += (food.replenishmentValue * 1.5);
+    }
     return this.health += food.replenishmentValue;
   }
 
