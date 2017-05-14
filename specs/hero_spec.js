@@ -11,7 +11,6 @@ describe("Hero", function() {
   var task1;
   var task2;
   var task3;
-  var task4;
 
   beforeEach(function() {
     hero1 = new Hero("Gardven", 100, "lamb");
@@ -20,7 +19,6 @@ describe("Hero", function() {
     task1 = new Task("Clear out the bandit camp", 4, 5, 200, false);
     task2 = new Task("Slay the dragon", 9, 2, 1000000, false);
     task3 = new Task("Clean the bathroom", 1, 10, 0, false);
-    task4 = new Task("Completed task", 0, 0, 0, true);
   });
 
   it("should have a name", function() {
@@ -83,16 +81,20 @@ describe("Hero", function() {
     hero1.addTask(task1);
     hero1.addTask(task2);
     hero1.addTask(task3);
-    hero1.addTask(task4);
-    assert.deepEqual([task4], hero1.viewCompletedTasks());
+    assert.equal(0, hero1.viewCompletedTasks().length);
   });
 
   it("can view only uncompleted tasks", function() {
     hero1.addTask(task1);
     hero1.addTask(task2);
     hero1.addTask(task3);
-    hero1.addTask(task4);
-    assert.deepEqual([task1, task2, task3], hero1.viewUncompletedTasks());
+    assert.equal(3, hero1.viewUncompletedTasks().length);
   });
+
+  it("can complete tasks", function() {
+    hero1.addTask(task1);
+    hero1.completeTask(task1);
+    assert.equal(1, hero1.viewCompletedTasks().length);
+  })
 
 });

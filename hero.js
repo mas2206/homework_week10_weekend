@@ -62,6 +62,10 @@ Hero.prototype = {
       }
     });
     return uncompletedTasks;
+  },
+
+  completeTask: function(task) {
+    task.completed = true;
   }
 
 }
