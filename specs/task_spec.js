@@ -8,25 +8,25 @@ describe("Task", function() {
   var task3;
 
   beforeEach(function() {
-    task1 = new Task("Clean the bathroom", "low", "high", 1, false);
-    task2 = new Task("Clear out the bandit camp", "medium", "medium", 100, false);
-    task3 = new Task("Slay the dragon", "high", "low", 5000000, false);
+    task1 = new Task("Slay the dragon", 10, 2, 1000000, false);
+    task2 = new Task("Clear out the bandit camp", 4, 5, 200, false);
+    task3 = new Task("Clean the bathroom", 1, 9, 0, false);
   });
 
   it("should have a description", function() {
-    assert.equal("Slay the dragon", task3.description);
+    assert.equal("Slay the dragon", task1.description);
   })
 
   it("should have a difficulty level", function() {
-    assert.equal("low", task1.difficultyLevel);
+    assert.equal(10, task1.difficultyLevel);
   });
 
   it("should have an urgency level", function() {
-    assert.equal("high", task1.urgencyLevel);
+    assert.equal(9, task3.urgencyLevel);
   });
 
   it("should have a reward amount", function() {
-    assert.equal(100, task2.reward);
+    assert.equal(200, task2.reward);
   });
 
   it("should have a 'completed' check", function() {

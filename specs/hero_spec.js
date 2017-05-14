@@ -16,9 +16,9 @@ describe("Hero", function() {
     hero1 = new Hero("Gardven", 100, "lamb");
     food1 = new Food("chicken", 20);
     food2 = new Food("lamb", 30);
-    task1 = new Task("Clean the bathroom", "low", "high", 1, false);
-    task2 = new Task("Clear out the bandit camp", "medium", "medium", 100, false);
-    task3 = new Task("Slay the dragon", "high", "low", 5000000, false);
+    task1 = new Task("Slay the dragon", 10, 2, 1000000, false);
+    task2 = new Task("Clear out the bandit camp", 4, 5, 200, false);
+    task3 = new Task("Clean the bathroom", 1, 9, 0, false);
   });
 
   it("should have a name", function() {
@@ -54,6 +54,13 @@ describe("Hero", function() {
   it("can add task(s) to task list", function() {
     hero1.addTask(task1);
     assert.equal(1, hero1.tasks.length);
-  })
+  });
+
+  it("can sort tasks by difficulty level (easiest to hardest)", function() {
+    hero1.addTask(task1);
+    hero1.addTask(task2);
+    hero1.addTask(task3);
+    assert.deepEqual([task3, task2, task1], hero1.sortTasksByDifficulty());
+  });
 
 });
