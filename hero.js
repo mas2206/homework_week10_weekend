@@ -52,6 +52,16 @@ Hero.prototype = {
       }
     });
     return completedTasks;
+  },
+
+  viewUncompletedTasks: function() {
+    var uncompletedTasks = [];
+    this.tasks.filter(function(task) {
+      if (task.completed === false) {
+        uncompletedTasks.push(task);
+      }
+    });
+    return uncompletedTasks;
   }
 
 }

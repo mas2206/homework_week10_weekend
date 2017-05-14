@@ -79,12 +79,20 @@ describe("Hero", function() {
     assert.deepEqual([task2, task1, task3], hero1.sortTasksByReward());
   });
 
-  it("can view completed tasks", function() {
+  it("can view only completed tasks", function() {
     hero1.addTask(task1);
     hero1.addTask(task2);
     hero1.addTask(task3);
     hero1.addTask(task4);
     assert.deepEqual([task4], hero1.viewCompletedTasks());
+  });
+
+  it("can view only uncompleted tasks", function() {
+    hero1.addTask(task1);
+    hero1.addTask(task2);
+    hero1.addTask(task3);
+    hero1.addTask(task4);
+    assert.deepEqual([task1, task2, task3], hero1.viewUncompletedTasks());
   });
 
 });
