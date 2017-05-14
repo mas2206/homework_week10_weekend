@@ -54,7 +54,7 @@ describe("Hero", function() {
     assert.equal(0, hero1.tasks.length);
   });
 
-  it("can add task(s) to task list", function() {
+  it("can add tasks to task list", function() {
     hero1.addTask(task1);
     assert.equal(1, hero1.tasks.length);
   });
@@ -94,7 +94,7 @@ describe("Hero", function() {
     assert.equal(3, hero1.viewUncompletedTasks().length);
   });
 
-  it("can complete tasks", function() {
+  it("can complete tasks and receive gold reward", function() {
     hero1.addTask(task1);
     hero1.completeTask(task1);
     assert.equal(1, hero1.viewCompletedTasks().length);
@@ -102,7 +102,7 @@ describe("Hero", function() {
   });
 
   it("should lose health if poisoned food is eaten", function() {
-    rat1.poisonFood(food1);
+    rat1.nibbleFood(food1);
     hero1.eatFood(food1);
     assert.equal(50, hero1.health);
   });

@@ -13,7 +13,7 @@ describe("Rat", function() {
   });
 
   it("can poison food", function() {
-    rat1.poisonFood(food1);
+    rat1.nibbleFood(food1);
     assert.equal(true, food1.poisoned);
   });
 

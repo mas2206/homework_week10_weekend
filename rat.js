@@ -2,7 +2,7 @@ function Rat() {};
 
 Rat.prototype = {
 
-  poisonFood: function(food) {
+  nibbleFood: function(food) {
     food.poisoned = true;
   }
 

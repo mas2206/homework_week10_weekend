@@ -21,7 +21,7 @@ Hero.prototype = {
     }
     else {
     return this.health += food.replenishmentValue;
-    }
+    };
   },
 
   addTask: function(task) {
