@@ -35,6 +35,13 @@ Hero.prototype = {
       return task1.urgencyLevel - task2.urgencyLevel;
     });
     return this.tasks.reverse();
+  },
+
+  sortTasksByReward: function() {
+    this.tasks.sort(function(task1, task2) {
+      return task1.reward - task2.reward;
+    });
+    return this.tasks.reverse();
   }
 
 }
