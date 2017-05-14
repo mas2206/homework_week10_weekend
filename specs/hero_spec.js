@@ -98,6 +98,7 @@ describe("Hero", function() {
     hero1.addTask(task1);
     hero1.completeTask(task1);
     assert.equal(1, hero1.viewCompletedTasks().length);
+    assert.equal(200, hero1.gold);
   });
 
   it("should lose health if poisoned food is eaten", function() {

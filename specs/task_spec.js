@@ -29,7 +29,7 @@ describe("Task", function() {
     assert.equal(1000000, task2.reward);
   });
 
-  it("should have a 'completed' check", function() {
+  it("should have a boolean 'completed' value", function() {
     assert.equal(false, task1.completed);
   });
 

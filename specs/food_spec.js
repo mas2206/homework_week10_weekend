@@ -19,4 +19,8 @@ describe("Food", function() {
     assert.equal(30, food2.replenishmentValue);
   });
 
+  it("should have a boolean 'poisoned' value", function() {
+    assert.equal(false, food1.poisoned);
+  })
+
 });

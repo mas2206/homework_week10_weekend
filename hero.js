@@ -71,6 +71,7 @@ Hero.prototype = {
 
   completeTask: function(task) {
     task.completed = true;
+    this.gold += task.reward;
   }
 
 };
