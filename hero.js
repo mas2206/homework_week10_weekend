@@ -42,6 +42,16 @@ Hero.prototype = {
       return task1.reward - task2.reward;
     });
     return this.tasks.reverse();
+  },
+
+  viewCompletedTasks: function() {
+    var completedTasks = [];
+    this.tasks.filter(function(task) {
+      if (task.completed === true) {
+        completedTasks.push(task);
+      }
+    });
+    return completedTasks;
   }
 
 }
