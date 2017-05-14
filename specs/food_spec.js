@@ -7,8 +7,8 @@ describe("Food", function() {
   var food2;
 
   beforeEach(function() {
-    food1 = new Food("chicken", 20);
-    food2 = new Food("lamb", 30);
+    food1 = new Food("chicken", 20, false);
+    food2 = new Food("lamb", 30, false);
   });
 
   it("should have a name", function() {

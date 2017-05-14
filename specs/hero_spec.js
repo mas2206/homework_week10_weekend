@@ -14,8 +14,8 @@ describe("Hero", function() {
 
   beforeEach(function() {
     hero1 = new Hero("Gardven", 100, "lamb");
-    food1 = new Food("chicken", 20);
-    food2 = new Food("lamb", 30);
+    food1 = new Food("chicken", 20, false);
+    food2 = new Food("lamb", 30, false);
     task1 = new Task("Clear out the bandit camp", 4, 5, 200, false);
     task2 = new Task("Slay the dragon", 9, 2, 1000000, false);
     task3 = new Task("Clean the bathroom", 1, 10, 0, false);

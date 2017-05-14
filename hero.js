@@ -4,7 +4,7 @@ function Hero(name, health, favouriteFood) {
   this.favouriteFood = favouriteFood;
   this.tasks = [];
   this.gold = 0;
-}
+};
 
 Hero.prototype = {
 
@@ -68,6 +68,6 @@ Hero.prototype = {
     task.completed = true;
   }
 
-}
+};
 
 module.exports = Hero;
